@@ -348,7 +348,7 @@ static int create_subproc_thread(const char *name, const subproc_mode mode)
 
     const char *arg0, *arg1;
     if (name == 0 || *name == 0) {
-        arg0 = "-"; arg1 = 0;
+        arg0 = "-l"; arg1 = 0;
     } else {
         arg0 = "-c"; arg1 = name;
     }
