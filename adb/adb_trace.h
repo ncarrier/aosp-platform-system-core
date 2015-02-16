@@ -45,7 +45,7 @@ typedef enum {
 
 #if ADB_TRACE
 
-#if !ADB_HOST
+#if !ADB_HOST && !ADB_LINUX
 /*
  * When running inside the emulator, guest's adbd can connect to 'adb-debug'
  * qemud service that can display adb trace messages (on condition that emulator
@@ -67,7 +67,7 @@ void    adb_trace_init(void);
 #  define ADB_TRACING  ((adb_trace_mask & (1 << TRACE_TAG)) != 0)
 
 /* you must define TRACE_TAG before using this macro */
-#if ADB_HOST
+#if ADB_HOST || ADB_LINUX
 #  define  D(...)                                      \
         do {                                           \
             if (ADB_TRACING) {                         \

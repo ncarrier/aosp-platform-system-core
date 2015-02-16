@@ -162,7 +162,7 @@ static void *server_socket_thread(void * arg)
 }
 
 /* This is relevant only for ADB daemon running inside the emulator. */
-#if !ADB_HOST
+#if !ADB_HOST && !ADB_LINUX
 /*
  * Redefine open and write for qemu_pipe.h that contains inlined references
  * to those routines. We will redifine them back after qemu_pipe.h inclusion.
@@ -270,7 +270,12 @@ static const char _ok_resp[]    = "ok";
     D("transport: qemu_socket_thread() exiting\n");
     return 0;
 }
-#endif  // !ADB_HOST
+#else
+static void *qemu_socket_thread(void * arg)
+{
+
+}
+#endif  // !ADB_HOST && !ADB_LINUX
 
 void local_init(int port)
 {

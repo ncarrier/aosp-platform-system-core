@@ -97,7 +97,7 @@ void init_usb_transport(atransport *t, usb_handle *h, int state)
 #endif
 }
 
-#if ADB_HOST
+#if ADB_HOST || ADB_LINUX
 int is_adb_interface(int vid, int pid, int usb_class, int usb_subclass, int usb_protocol)
 {
     return (usb_class == ADB_CLASS && usb_subclass == ADB_SUBCLASS && usb_protocol == ADB_PROTOCOL);

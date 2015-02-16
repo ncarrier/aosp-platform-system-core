@@ -301,7 +301,7 @@ static int create_subproc_raw(const char *cmd, const char *arg0, const char *arg
 }
 #endif  /* !ABD_HOST */
 
-#if ADB_HOST
+#if ADB_HOST || ADB_LINUX
 #define SHELL_COMMAND "/bin/sh"
 #else
 #define SHELL_COMMAND "/system/bin/sh"

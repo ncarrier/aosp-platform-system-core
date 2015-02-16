@@ -143,6 +143,7 @@ void  adb_trace_init(void)
     }
 }
 
+#if !ADB_LINUX
 #if !ADB_HOST
 /*
  * Implements ADB tracing inside the emulator.
@@ -195,6 +196,12 @@ void adb_qemu_trace(const char* fmt, ...)
     }
 }
 #endif  /* !ADB_HOST */
+#else  /* !ADB_LINUX */
+static int adb_qemu_trace_init(void)
+{
+
+}
+#endif  /* !ADB_LINUX */
 
 apacket *get_apacket(void)
 {
