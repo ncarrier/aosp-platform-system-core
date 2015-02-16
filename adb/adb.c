@@ -36,11 +36,9 @@
 #if !ADB_HOST
 #include <cutils/properties.h>
 #include <private/android_filesystem_config.h>
-#include <sys/capability.h>
 #include <sys/mount.h>
 #include <sys/prctl.h>
 #include <getopt.h>
-#include <selinux/selinux.h>
 #endif
 
 #if ADB_TRACE

@@ -19,7 +19,6 @@
 
 #include <sys/cdefs.h>
 #include <stddef.h>
-#include <sys/system_properties.h>
 #include <stdint.h>
 
 #ifdef __cplusplus
