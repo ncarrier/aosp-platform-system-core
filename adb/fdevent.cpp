@@ -86,14 +86,14 @@ static fdevent *fdevent_plist_dequeue(void);
 static void fdevent_subproc_event_func(int fd, unsigned events, void *userdata);
 
 static fdevent list_pending = {
-    .next = &list_pending,
-    .prev = &list_pending,
-    .fd = -1,
-    .force_eof = 0,
-    .state = 0,
-    .events = 0,
-    .func = nullptr,
-    .arg = nullptr,
+    /* .next = */ &list_pending,
+    /* .prev = */ &list_pending,
+    /* .fd = */ -1,
+    /* .force_eof = */ 0,
+    /* .state = */ 0,
+    /* .events = */ 0,
+    /* .func = */ nullptr,
+    /* .arg = */ nullptr,
 };
 
 static fdevent **fd_table = 0;
